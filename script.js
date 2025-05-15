@@ -1,3 +1,5 @@
+let num1, num2, op;
+
 function add(a, b){
     return a+b;
 }
@@ -12,4 +14,23 @@ function multiply(a, b){
 
 function divide(a, b){
     return a/b;
+}
+
+function operate(num1, op, num2){
+    if(op == '+')
+        return add(num1, num2);
+    else if(op == '-')
+        return subtract(num1, num2);
+    else if(op == "*")
+        return multiply(num1, num2)
+    else if(op == "/"){
+        if(num2 == 0)
+            return "error: division by zero";
+        else{
+            return divide(num1, num2);
+        }
+    }
+    else
+        return "error: unknown operator";
+
 }
