@@ -1,12 +1,31 @@
-.container {
-    display: flex;
-    justify-content: center;
+*{
+    box-sizing: border-box;
 }
 
 .calculator{
     background-color: black;
     max-width: 700px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
 
+.row{
+    display: flex;
+    padding: 3px;
+    margin: 0;
+    gap: 3px;
+}
+
+.display {
+    font-size: 30px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    height: 100px;
 }
 
 .number {
@@ -18,7 +37,14 @@
 }
 
 input[type = "button"]{
-    width: 100%;
     font-size: 24px;
     border-radius: 5px;
+    flex: 1;
+    padding: 10px 0px;
+    height: 100px;
+}
+
+#zerodiv{
+    flex-grow: 2;
+    padding-right: 6px;
 }
