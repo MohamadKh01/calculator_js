@@ -1,4 +1,8 @@
-let num1, num2, op;
+let currInput = "";
+let prevInput = "";
+let operator = "";
+
+const res = document.querySelector("#result");
 
 function add(a, b){
     return a+b;
@@ -33,4 +37,9 @@ function operate(num1, op, num2){
     else
         return "error: unknown operator";
 
+}
+
+function appendNumber(num){
+    currInput += num;
+    res.value = "" + prevInput + operator + currInput;
 }

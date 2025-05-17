@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>calculator</title>
     <link href="./style.css" rel="stylesheet">
-    <script src="./script.js"></script>
+    <script src="./script.js" defer></script>
 </head>
 <body>
     <div class="container">
@@ -14,33 +14,33 @@
                 <input class="display" type="text" id="result" readonly>
             </div>
             <div class="row">
-                <input class="clear" type="button" value="C">
-                <input class="operator" type="button" value="+/-">
-                <input class="operator" type="button" value="%">
-                <input class="operator" type="button" value="/">
+                <input class="button clear" type="button" value="C">
+                <input class="button operator" type="button" value="+/-">
+                <input class="button operator" type="button" value="%">
+                <input class="button operator" type="button" value="/">
             </div>
             <div class="row">
-                <input class="number" type="button" value="7">
-                <input class="number" type="button" value="8">
-                <input class="number" type="button" value="9">
-                <input class="operator" type="button" value="*">
+                <input class="button number" type="button" value="7" onclick="appendNumber('7')">
+                <input class="button number" type="button" value="8" onclick="appendNumber('8')">
+                <input class="button number" type="button" value="9" onclick="appendNumber('9')">
+                <input class="button operator" type="button" value="*">
             </div>
             <div class="row">
-                <input class="number" type="button" value="4">
-                <input class="number" type="button" value="5">
-                <input class="number" type="button" value="6">
-                <input class="operator" type="button" value="-">
+                <input class="button number" type="button" value="4" onclick="appendNumber('4')">
+                <input class="button number" type="button" value="5" onclick="appendNumber('5')">
+                <input class="button number" type="button" value="6" onclick="appendNumber('6')">
+                <input class="button operator" type="button" value="-">
             </div>
             <div class="row">
-                <input class="number" type="button" value="1">
-                <input class="number" type="button" value="2">
-                <input class="number" type="button" value="3">
-                <input class="operator" type="button" value="+">
+                <input class="button number" type="button" value="1" onclick="appendNumber('1')">
+                <input class="button number" type="button" value="2" onclick="appendNumber('2')">
+                <input class="button number" type="button" value="3" onclick="appendNumber('3')">
+                <input class="button operator" type="button" value="+">
             </div>
             <div class="row">
-                <input id="zerodiv" class="number" type="button" value="0">
-                <input class="number" type="button" value=".">
-                <input class="operator" type="button" value="=">
+                <input id="zerodiv" class="button number" type="button" value="0" onclick="appendNumber('0')">
+                <input class="button number" type="button" value="." onclick="appendNumber('.')">
+                <input class="button operator" type="button" value="=">
             </div>
         </div>
     </div>
