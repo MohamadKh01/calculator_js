@@ -5,7 +5,7 @@ let operator = "";
 const res = document.querySelector("#result");
 
 function add(a, b){
-    return a+b;
+    return parseInt(a)+parseInt(b);
 }
 
 function subtract(a, b){
@@ -41,5 +41,19 @@ function operate(num1, op, num2){
 
 function appendNumber(num){
     currInput += num;
+    res.value = "" + prevInput + operator + currInput;
+}
+
+function appendOperator(op){
+    if(currInput === ""){
+        return;
+    }
+
+    if(prevInput !== "")
+        currInput = operate(prevInput, operator, currInput);
+
+    prevInput = currInput;
+    currInput = "";
+    operator = op;
     res.value = "" + prevInput + operator + currInput;
 }
