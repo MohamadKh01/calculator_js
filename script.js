@@ -57,3 +57,10 @@ function appendOperator(op){
     operator = op;
     res.value = "" + prevInput + operator + currInput;
 }
+
+function clearDisplay(){
+    currInput = "";
+    prevInput = "";
+    operator = "";
+    res.value = "";
+}
