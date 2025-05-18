@@ -25,32 +25,43 @@ function mod(a, b){
 }
 
 function operate(num1, op, num2){
+    let s;
     if(op == '+')
-        return add(num1, num2);
+        s = add(num1, num2);
     else if(op == '-')
-        return subtract(num1, num2);
+        s = subtract(num1, num2);
     else if(op == '*')
-        return multiply(num1, num2)
+        s = multiply(num1, num2)
     else if(op == '/'){
         if(num2 == 0)
             return "error: division by zero";
         else{
-            return divide(num1, num2);
+            s = divide(num1, num2);
         }
     }
     else if(op ==  '%')
-        return mod(num1, num2);
+        s = mod(num1, num2);
     else
         return "error: unknown operator";
 
+    s = Math.round(s * 1000) / 1000;
+    return s;
 }
 
 function appendNumber(num){
+    if(num === '.' && currInput ===""){
+        currInput += "0";
+    }
     currInput += num;
     res.value = "" + prevInput + operator + currInput;
 }
 
 function appendOperator(op){
+
+    if(operator === ""){
+        operator = op;
+    }
+
     if(currInput === ""){
         operator = op;
         res.value = "" + prevInput + operator + currInput;
@@ -74,6 +85,28 @@ function clearDisplay(){
 }
 
 function changeSign(){
-    currInput = -1 * currInput;
+    if(currInput === ""){
+        prevInput = -1 * prevInput;
+    }
+    else {
+        currInput = -1 * currInput;
+    }
+
     res.value = "" + prevInput + operator + currInput;
+}
+
+function calculate(){
+    if(currInput === ""){
+        res.value = "" + prevInput;
+        return;
+    }
+
+    if(prevInput !== ""){
+        currInput = operate(prevInput, operator, currInput);
+    }
+
+    prevInput = currInput;
+    currInput = "";
+    operator = ""
+    res.value = "" + prevInput;
 }
