@@ -49,12 +49,14 @@ function operate(num1, op, num2){
 }
 
 function appendNumber(num){
-    if(num === '.' && currInput ===""){
-        currInput += "0";
-    }
     if(prevInput !== "" && operator === ""){
         prevInput = "";
     }
+    
+    if(num === '.' && currInput ===""){
+        currInput += "0";
+    }
+    
     currInput += num;
     res.value = "" + prevInput + operator + currInput;
 }
