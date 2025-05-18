@@ -52,6 +52,9 @@ function appendNumber(num){
     if(num === '.' && currInput ===""){
         currInput += "0";
     }
+    if(prevInput !== "" && operator === ""){
+        prevInput = "";
+    }
     currInput += num;
     res.value = "" + prevInput + operator + currInput;
 }
@@ -98,6 +101,11 @@ function changeSign(){
 function calculate(){
     if(currInput === ""){
         res.value = "" + prevInput;
+        operator = "";
+        return;
+    }
+
+    if(operator === ""){
         return;
     }
 
